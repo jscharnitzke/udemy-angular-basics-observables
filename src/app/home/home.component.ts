@@ -21,8 +21,12 @@ export class HomeComponent implements OnInit {
       }, 4000);
 
       setTimeout(() => {
-        observer.error('first error');
+        observer.complete();
       }, 5000);
+
+      setTimeout(() => {
+        observer.next('third package');
+      }, 6000);
     });
 
     myObservable.subscribe(
